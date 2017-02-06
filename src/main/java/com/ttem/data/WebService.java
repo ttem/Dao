@@ -6,7 +6,7 @@ import java.util.List;
 
 public class WebService extends Data{
 
-    public User selectUserById(int id) {
+    public User selectUserById(final int id) {
         return null;
     }
 
