@@ -13,4 +13,4 @@ hs_err_pid*
 
 # idea project files
 .idea/
-src/main/resources/
+target/
