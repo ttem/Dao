@@ -1,0 +1,18 @@
+package com.ttem.data;
+
+import com.ttem.dao.User;
+
+import java.util.List;
+
+public class Xml extends Data{
+
+    @Override
+    public User selectUserById(int id) {
+        return null;
+    }
+
+    @Override
+    public List<User> selectAllUsers() {
+        return null;
+    }
+}
