@@ -1,8 +1,6 @@
 package com.ttem.dao;
 
 import com.ttem.data.*;
-import org.easymock.EasyMock;
-
 import java.util.List;
 
 public class Dao implements DaoInterface{
@@ -52,7 +50,17 @@ public class Dao implements DaoInterface{
         return this.data.selectAllUsers();
     }
 
-    public SourceType getSourceType() {
-        return sourceType;
+    public static SourceType getDefaultSourceType() {
+        return Dao.DEFAULT_SOURCE_TYPE;
     }
+
+    public SourceType getCurrentSourceType() {
+        return this.sourceType;
+    }
+
+    public Data getData() {
+        return this.data;
+    }
+
+
 }
