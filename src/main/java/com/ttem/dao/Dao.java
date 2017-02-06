@@ -1,7 +1,6 @@
 package com.ttem.dao;
 
-import com.ttem.data.Data;
-import com.ttem.data.SourceType;
+import com.ttem.data.*;
 
 import java.util.List;
 
@@ -17,6 +16,29 @@ public class Dao implements DaoInterface{
     }
 
     private Dao() {
+    }
+
+    public boolean setSourceOfData(final SourceType sourceType){
+        switch (sourceType){
+            case DATA_BASE:
+                this.data = new DataBase();
+                break;
+            case WEB_SERVICE:
+                this.data = new WebService();
+                break;
+            case XML:
+                this.data = new Xml();
+                break;
+            default:
+                try {
+                    throw new Exception("Unknow source type");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+        }
+        this.sourceType = sourceType;
+
+        return true;
     }
 
     public User selectUserById(final int id) {
