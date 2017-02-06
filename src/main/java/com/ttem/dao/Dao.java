@@ -6,14 +6,14 @@ import java.util.List;
 
 public class Dao implements DaoInterface{
 
-    private static Dao ourInstance = new Dao();
-    private static final SourceType DEFAULT_SOURCE_TYPE = SourceType.DATA_BASE;
+    private final static SourceType DEFAULT_SOURCE_TYPE = SourceType.DATA_BASE;
+    private final static Dao daoInstance = new Dao();
 
     private SourceType sourceType;
     private Data data;
 
     public static Dao getInstance() {
-        return ourInstance;
+        return daoInstance;
     }
 
     private Dao() {
