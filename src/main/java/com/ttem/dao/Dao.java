@@ -7,6 +7,7 @@ import java.util.List;
 public class Dao implements DaoInterface{
 
     private static Dao ourInstance = new Dao();
+    private static final SourceType DEFAULT_SOURCETYPE = SourceType.DATA_BASE;
 
     private SourceType sourceType;
     private Data data;
@@ -16,6 +17,7 @@ public class Dao implements DaoInterface{
     }
 
     private Dao() {
+        this.setSourceOfData(Dao.DEFAULT_SOURCETYPE);
     }
 
     public boolean setSourceOfData(final SourceType sourceType){
