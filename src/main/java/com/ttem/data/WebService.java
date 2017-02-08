@@ -7,6 +7,15 @@ import java.util.List;
 
 public class WebService extends Data{
 
+    private final static WebService instance = new WebService();
+
+    private WebService() {
+    }
+
+    public static WebService getInstance() {
+        return WebService.instance;
+    }
+
     public User selectUserById(final int id) {
         return new User(id);
     }

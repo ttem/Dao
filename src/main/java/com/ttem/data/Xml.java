@@ -7,6 +7,15 @@ import java.util.List;
 
 public class Xml extends Data{
 
+    private final static Xml instance = new Xml();
+
+    private Xml() {
+    }
+
+    public static Xml getInstance() {
+        return Xml.instance;
+    }
+
     @Override
     public User selectUserById(final int id) {
         return new User(id);

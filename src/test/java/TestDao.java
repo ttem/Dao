@@ -12,22 +12,13 @@ public class TestDao {
 
     @Before
     public void setUp() {
-        this.testDao = Dao.getInstance();
-    }
-
-    @Test
-    public void daoSingleton() {
-        Dao expectedDao = Dao.getInstance();
-
-        Dao actualDao = Dao.getInstance();
-
-        Assert.assertSame(expectedDao,actualDao);
+        this.testDao = new Dao();
     }
 
     @Test
     public void setSourceOfDataWhenInputDataBase() {
         SourceType expectedSourceType = SourceType.DATA_BASE;
-        Data expectedData = new DataBase();
+        Data expectedData = DataBase.getInstance();
 
         SourceType inputSourceType = SourceType.DATA_BASE;
 
@@ -43,7 +34,7 @@ public class TestDao {
     @Test
     public void setSourceOfDataWhenInputXml() {
         SourceType expectedSourceType = SourceType.XML;
-        Data expectedData = new Xml();
+        Data expectedData = Xml.getInstance();
 
         SourceType inputSourceType = SourceType.XML;
 
@@ -59,7 +50,7 @@ public class TestDao {
     @Test
     public void setSourceOfDataWhenInputWebService() {
         SourceType expectedSourceType = SourceType.WEB_SERVICE;
-        Data expectedData = new WebService();
+        Data expectedData = WebService.getInstance();
 
         SourceType inputSourceType = SourceType.WEB_SERVICE;
 

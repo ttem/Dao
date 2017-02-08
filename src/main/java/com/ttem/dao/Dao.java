@@ -9,29 +9,24 @@ public class Dao implements DaoInterface{
 
     private static Logger log = Logger.getLogger(Dao.class);
     private final static SourceType DEFAULT_SOURCE_TYPE = SourceType.DATA_BASE;
-    private final static Dao daoInstance = new Dao();
 
     private SourceType sourceType;
     private Data data;
 
-    public static Dao getInstance() {
-        return daoInstance;
-    }
-
-    private Dao() {
+    public Dao() {
         this.setSourceOfData(Dao.DEFAULT_SOURCE_TYPE);
     }
 
     public boolean setSourceOfData(final SourceType sourceType) {
         switch (sourceType){
             case DATA_BASE:
-                this.data = new DataBase();
+                this.data = DataBase.getInstance();
                 break;
             case WEB_SERVICE:
-                this.data = new WebService();
+                this.data = WebService.getInstance();
                 break;
             case XML:
-                this.data = new Xml();
+                this.data = Xml.getInstance();
                 break;
             default:
                 try {
