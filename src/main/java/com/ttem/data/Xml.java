@@ -1,7 +1,6 @@
 package com.ttem.data;
 
 import com.ttem.dao.User;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +9,7 @@ public class Xml extends Data{
     private final static Xml instance = new Xml();
 
     private Xml() {
+
     }
 
     public static Xml getInstance() {

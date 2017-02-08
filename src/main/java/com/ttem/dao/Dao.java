@@ -60,6 +60,4 @@ public class Dao implements DaoInterface{
     public Data getData() {
         return this.data;
     }
-
-
 }

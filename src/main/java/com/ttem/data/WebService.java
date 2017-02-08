@@ -1,7 +1,6 @@
 package com.ttem.data;
 
 import com.ttem.dao.User;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +9,7 @@ public class WebService extends Data{
     private final static WebService instance = new WebService();
 
     private WebService() {
+
     }
 
     public static WebService getInstance() {
