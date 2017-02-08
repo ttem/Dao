@@ -4,5 +4,6 @@ public enum SourceType {
 
     DATA_BASE,
     XML,
-    WEB_SERVICE
+    WEB_SERVICE,
+    FILE
 }

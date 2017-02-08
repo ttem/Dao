@@ -2,15 +2,21 @@ import com.ttem.dao.Dao;
 import com.ttem.data.*;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class TestDao {
 
     private static Logger log = Logger.getLogger(TestDao.class);
+    private Dao testDao;
 
+    @Before
+    public void setUp() {
+        this.testDao = Dao.getInstance();
+    }
 
     @Test
-    public void daoSingleton() throws Exception {
+    public void daoSingleton() {
         Dao expectedDao = Dao.getInstance();
 
         Dao actualDao = Dao.getInstance();
@@ -19,63 +25,58 @@ public class TestDao {
     }
 
     @Test
-    public void setSourceOfDataWhenInputDataBase() throws Exception {
+    public void setSourceOfDataWhenInputDataBase() {
         SourceType expectedSourceType = SourceType.DATA_BASE;
         Data expectedData = new DataBase();
 
         SourceType inputSourceType = SourceType.DATA_BASE;
 
-        Dao testDao = Dao.getInstance();
-        testDao.setSourceOfData(inputSourceType);
+        this.testDao.setSourceOfData(inputSourceType);
 
-        SourceType actualSourceType = testDao.getCurrentSourceType();
-        Data actualData = testDao.getData();
+        SourceType actualSourceType = this.testDao.getCurrentSourceType();
+        Data actualData = this.testDao.getData();
 
         Assert.assertSame(expectedSourceType, actualSourceType);
         Assert.assertSame(expectedData.getClass(), actualData.getClass());
     }
 
     @Test
-    public void setSourceOfDataWhenInputXml() throws Exception {
+    public void setSourceOfDataWhenInputXml() {
         SourceType expectedSourceType = SourceType.XML;
         Data expectedData = new Xml();
 
         SourceType inputSourceType = SourceType.XML;
 
-        Dao testDao = Dao.getInstance();
-        testDao.setSourceOfData(inputSourceType);
+        this.testDao.setSourceOfData(inputSourceType);
 
-        SourceType actualSourceType = testDao.getCurrentSourceType();
-        Data actualData = testDao.getData();
+        SourceType actualSourceType = this.testDao.getCurrentSourceType();
+        Data actualData = this.testDao.getData();
 
         Assert.assertSame(expectedSourceType, actualSourceType);
         Assert.assertSame(expectedData.getClass(), actualData.getClass());
     }
 
     @Test
-    public void setSourceOfDataWhenInputWebService() throws Exception {
+    public void setSourceOfDataWhenInputWebService() {
         SourceType expectedSourceType = SourceType.WEB_SERVICE;
         Data expectedData = new WebService();
 
         SourceType inputSourceType = SourceType.WEB_SERVICE;
 
-        Dao testDao = Dao.getInstance();
-        testDao.setSourceOfData(inputSourceType);
+        this.testDao.setSourceOfData(inputSourceType);
 
-        SourceType actualSourceType = testDao.getCurrentSourceType();
-        Data actualData = testDao.getData();
+        SourceType actualSourceType = this.testDao.getCurrentSourceType();
+        Data actualData = this.testDao.getData();
 
         Assert.assertSame(expectedSourceType, actualSourceType);
         Assert.assertSame(expectedData.getClass(), actualData.getClass());
     }
 
     @Test
-    public void setSourceOfDataDefault() throws Exception {
+    public void setSourceOfDataDefault() {
         SourceType expectedSourceType = Dao.getDefaultSourceType();
 
-        Dao testDao = Dao.getInstance();
-
-        SourceType actualSourceType = testDao.getCurrentSourceType();
+        SourceType actualSourceType = this.testDao.getCurrentSourceType();
 
         Assert.assertSame(expectedSourceType, actualSourceType);
     }

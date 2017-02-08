@@ -1,10 +1,13 @@
 package com.ttem.dao;
 
 import com.ttem.data.*;
+import com.ttem.exception.SourceTypeNotDefinedException;
+import org.apache.log4j.Logger;
 import java.util.List;
 
 public class Dao implements DaoInterface{
 
+    private static Logger log = Logger.getLogger(Dao.class);
     private final static SourceType DEFAULT_SOURCE_TYPE = SourceType.DATA_BASE;
     private final static Dao daoInstance = new Dao();
 
@@ -19,7 +22,7 @@ public class Dao implements DaoInterface{
         this.setSourceOfData(Dao.DEFAULT_SOURCE_TYPE);
     }
 
-    public boolean setSourceOfData(final SourceType sourceType){
+    public boolean setSourceOfData(final SourceType sourceType) {
         switch (sourceType){
             case DATA_BASE:
                 this.data = new DataBase();
@@ -32,9 +35,10 @@ public class Dao implements DaoInterface{
                 break;
             default:
                 try {
-                    throw new Exception("Unknow source type");
-                } catch (Exception e) {
-                    e.printStackTrace();
+                    throw new SourceTypeNotDefinedException(sourceType.toString());
+                } catch (SourceTypeNotDefinedException e) {
+                    log.error(e.toString());
+                    return false;
                 }
         }
         this.sourceType = sourceType;
