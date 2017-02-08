@@ -16,7 +16,7 @@ public class TestDataSingleton {
     }
 
     @Test
-    public void xml() throws Exception {
+    public void xml() {
         Xml expectedXml = Xml.getInstance();
 
         Xml actualXml = Xml.getInstance();
@@ -25,7 +25,7 @@ public class TestDataSingleton {
     }
 
     @Test
-    public void webService() throws Exception {
+    public void webService() {
         WebService expectedWebService = WebService.getInstance();
 
         WebService actualWebService = WebService.getInstance();
