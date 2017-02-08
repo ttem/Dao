@@ -3,11 +3,12 @@ package com.ttem.dao;
 import com.ttem.data.*;
 import com.ttem.exception.SourceTypeNotDefinedException;
 import org.apache.log4j.Logger;
+
 import java.util.List;
 
 public class Dao implements DaoInterface{
 
-    private static Logger log = Logger.getLogger(Dao.class);
+    private final static Logger log = Logger.getLogger(Dao.class);
     private final static SourceType DEFAULT_SOURCE_TYPE = SourceType.DATA_BASE;
 
     private SourceType sourceType;

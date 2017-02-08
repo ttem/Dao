@@ -10,7 +10,6 @@ public class DataBase extends Data{
     private final static DataBase instance = new DataBase();
 
     private DataBase() {
-
     }
 
     public static DataBase getInstance() {

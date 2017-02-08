@@ -9,7 +9,6 @@ public class Xml extends Data{
     private final static Xml instance = new Xml();
 
     private Xml() {
-
     }
 
     public static Xml getInstance() {

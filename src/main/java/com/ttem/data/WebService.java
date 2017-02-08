@@ -9,7 +9,6 @@ public class WebService extends Data{
     private final static WebService instance = new WebService();
 
     private WebService() {
-
     }
 
     public static WebService getInstance() {
