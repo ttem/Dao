@@ -23,7 +23,7 @@ public class TestDaoEasyMock {
     }
 
     @Test
-    public void testSelectUserByIdWithEasyMock() throws Exception {
+    public void selectUserByIdWithEasyMock() throws Exception {
         int expectedId = 1;
 
         int inputId = 1;
@@ -34,7 +34,7 @@ public class TestDaoEasyMock {
     }
 
     @Test
-    public void testSelectAllUsersWithEasyMock() throws Exception {
+    public void selectAllUsersWithEasyMock() throws Exception {
         List<User> expectedArray = new ArrayList<>();
 
         List<User> actualArray = TestDaoEasyMock.daoWithEasyMock.selectAllUsers();

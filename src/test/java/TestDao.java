@@ -10,7 +10,7 @@ public class TestDao {
 
 
     @Test
-    public void testDaoSingleton() throws Exception {
+    public void daoSingleton() throws Exception {
         Dao expectedDao = Dao.getInstance();
 
         Dao actualDao = Dao.getInstance();
@@ -19,7 +19,7 @@ public class TestDao {
     }
 
     @Test
-    public void testSetSourceOfDataWhenInputDataBase() throws Exception {
+    public void setSourceOfDataWhenInputDataBase() throws Exception {
         SourceType expectedSourceType = SourceType.DATA_BASE;
         Data expectedData = new DataBase();
 
@@ -36,7 +36,7 @@ public class TestDao {
     }
 
     @Test
-    public void testSetSourceOfDataWhenInputXml() throws Exception {
+    public void setSourceOfDataWhenInputXml() throws Exception {
         SourceType expectedSourceType = SourceType.XML;
         Data expectedData = new Xml();
 
@@ -53,7 +53,7 @@ public class TestDao {
     }
 
     @Test
-    public void testSetSourceOfDataWhenInputWebService() throws Exception {
+    public void setSourceOfDataWhenInputWebService() throws Exception {
         SourceType expectedSourceType = SourceType.WEB_SERVICE;
         Data expectedData = new WebService();
 
@@ -70,7 +70,7 @@ public class TestDao {
     }
 
     @Test
-    public void testSetSourceOfDataDefault() throws Exception {
+    public void setSourceOfDataDefault() throws Exception {
         SourceType expectedSourceType = Dao.getDefaultSourceType();
 
         Dao testDao = Dao.getInstance();
