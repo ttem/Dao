@@ -1,13 +1,13 @@
+package com.ttem.tests;
+
 import com.ttem.dao.Dao;
 import com.ttem.data.*;
-import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 public class TestDao {
 
-    private static Logger log = Logger.getLogger(TestDao.class);
     private Dao testDao;
 
     @Before
@@ -24,7 +24,7 @@ public class TestDao {
 
         this.testDao.setSourceOfData(inputSourceType);
 
-        SourceType actualSourceType = this.testDao.getCurrentSourceType();
+        SourceType actualSourceType = this.testDao.getSourceType();
         Data actualData = this.testDao.getData();
 
         Assert.assertSame(expectedSourceType, actualSourceType);
@@ -40,7 +40,7 @@ public class TestDao {
 
         this.testDao.setSourceOfData(inputSourceType);
 
-        SourceType actualSourceType = this.testDao.getCurrentSourceType();
+        SourceType actualSourceType = this.testDao.getSourceType();
         Data actualData = this.testDao.getData();
 
         Assert.assertSame(expectedSourceType, actualSourceType);
@@ -56,7 +56,7 @@ public class TestDao {
 
         this.testDao.setSourceOfData(inputSourceType);
 
-        SourceType actualSourceType = this.testDao.getCurrentSourceType();
+        SourceType actualSourceType = this.testDao.getSourceType();
         Data actualData = this.testDao.getData();
 
         Assert.assertSame(expectedSourceType, actualSourceType);
@@ -67,7 +67,7 @@ public class TestDao {
     public void setSourceOfDataDefault() {
         SourceType expectedSourceType = Dao.getDefaultSourceType();
 
-        SourceType actualSourceType = this.testDao.getCurrentSourceType();
+        SourceType actualSourceType = this.testDao.getSourceType();
 
         Assert.assertSame(expectedSourceType, actualSourceType);
     }

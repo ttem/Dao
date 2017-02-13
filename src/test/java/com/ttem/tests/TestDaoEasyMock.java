@@ -1,3 +1,5 @@
+package com.ttem.tests;
+
 import com.ttem.dao.Dao;
 import com.ttem.dao.User;
 import org.easymock.EasyMock;
@@ -13,7 +15,7 @@ public class TestDaoEasyMock {
     private static Dao daoWithEasyMock;
 
     @BeforeClass
-    public static void setUp() throws Exception {
+    public static void setUp() {
         TestDaoEasyMock.daoWithEasyMock = EasyMock.createMock(Dao.class);
 
         EasyMock.expect(TestDaoEasyMock.daoWithEasyMock.selectUserById(1)).andReturn(new User(1));

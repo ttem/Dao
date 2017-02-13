@@ -1,7 +1,6 @@
 package com.ttem.data;
 
 import com.ttem.dao.User;
-
 import java.util.ArrayList;
 import java.util.List;
 

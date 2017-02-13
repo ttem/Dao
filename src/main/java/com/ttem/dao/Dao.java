@@ -1,9 +1,12 @@
 package com.ttem.dao;
 
-import com.ttem.data.*;
+import com.ttem.data.Data;
+import com.ttem.data.DataBase;
+import com.ttem.data.SourceType;
+import com.ttem.data.WebService;
+import com.ttem.data.Xml;
 import com.ttem.exception.SourceTypeNotDefinedException;
 import org.apache.log4j.Logger;
-
 import java.util.List;
 
 public class Dao implements DaoInterface{
@@ -54,7 +57,7 @@ public class Dao implements DaoInterface{
         return Dao.DEFAULT_SOURCE_TYPE;
     }
 
-    public SourceType getCurrentSourceType() {
+    public SourceType getSourceType() {
         return this.sourceType;
     }
 

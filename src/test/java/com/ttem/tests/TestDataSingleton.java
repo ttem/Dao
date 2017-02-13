@@ -1,3 +1,5 @@
+package com.ttem.tests;
+
 import com.ttem.data.DataBase;
 import com.ttem.data.WebService;
 import com.ttem.data.Xml;
